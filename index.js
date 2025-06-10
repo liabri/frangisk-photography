@@ -61,96 +61,110 @@ function hide() {
     document.getElementById("projects").classList.remove("active");
 }
 
-function horizontalScrolling(index) {
-    var canvasses = [];
-    canvasses = document.querySelectorAll(".canvas");
-    scrollContainer = canvasses[index];
+// function horizontalScrolling(index) {
+//     var canvasses = [];
+//     canvasses = document.querySelectorAll(".canvas");
+//     scrollContainer = canvasses[index];
 
-    if (typeof scrollContainer == 'undefined') {
-        scrollContainer = document.getElementById("firstroll");
+//     if (typeof scrollContainer == 'undefined') {
+//         scrollContainer = document.getElementById("firstroll");
+//     }
+
+//     try {
+//         var offsetX = scrollContainer.scrollLeft;
+//     } catch {
+//         var offsetX = 0;
+//     }
+
+//     var speedX = 0;
+//     const deltaMultiplier = 25;
+//     const maxSpeed = 55;
+//     const friction = 0.7;
+
+//     function draw() {
+//         cancelAnimationFrame(rafId);
+
+//         offsetX += speedX;
+//         const maxScrollLeft =
+//             scrollContainer.scrollWidth - scrollContainer.clientWidth;
+//         offsetX = Math.min(offsetX, maxScrollLeft);
+//         offsetX = Math.max(offsetX, 0);
+
+//         scrollContainer.scrollLeft = offsetX;
+//         speedX *= friction;
+
+//         // update progress bar
+//         progressBarPercentage=Math.round((offsetX/maxScrollLeft)*100);
+//         document.getElementById("progressBar").style.width = progressBarPercentage + "%";
+//         if (progressBarPercentage>4) {
+//             document.getElementById("progressBarTip").style.opacity = 0;
+//             document.getElementById("progressBarTip").style.visibility = "hidden";
+//         } else {
+//             document.getElementById("progressBarTip").style.opacity = 0.8;
+//             document.getElementById("progressBarTip").style.visibility = "visible";
+//         }
+
+//         console.log("drawing");
+
+//         // about 60 times a second
+//         rafId = requestAnimationFrame(draw);
+//     }
+
+//     scrollContainer.addEventListener("wheel", (ev) => {
+//         // ev.preventDefault();
+//         var delta = -1 * Math.sign(ev.wheelDelta);
+//         speedX += delta * deltaMultiplier;
+//         speedX =
+//             speedX > 0
+//                 ? Math.min(speedX, maxSpeed)
+//                 : Math.max(speedX, -maxSpeed);
+//         return false;
+//     }, {passive: true});
+
+//     document.addEventListener("keydown", (ev) => {
+//         // ev.preventDefault();
+//         delta = 0;
+//         if (ev.code=="ArrowRight" || ev.code=="ArrowDown") {
+//             delta = 3;
+//         } else if (ev.code=="ArrowLeft" || ev.code=="ArrowUp") {
+//             delta = -3;
+//         }
+
+//         speedX += delta * deltaMultiplier;
+//         speedX =
+//             speedX > 0
+//                 ? Math.min(speedX, maxSpeed)
+//                 : Math.max(speedX, -maxSpeed);
+//         return false;
+//     }, {passive: true});
+
+//     draw();
+// }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const landing = document.getElementById("landing");
+    const main = document.getElementById("mainContent");
+
+    function enterSite() {
+        landing.style.display = "none";
+        main.style.display = "block";
+        setTimeout(() => {
+            main.style.opacity = 1;
+            if (typeof fullpage_api !== 'undefined') {
+                fullpage_api.setAutoScrolling(true);
+            }
+        }, 50);
     }
 
-    try {
-        var offsetX = scrollContainer.scrollLeft;
-    } catch {
-        var offsetX = 0;
+    // Enter on click, scroll, or down arrow
+    landing.addEventListener("click", enterSite);
+    window.addEventListener("wheel", enterSite, { once: true });
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowDown" || e.key === "Enter") enterSite();
+    });
+
+    // Temporarily disable fullpage scrolling until after enter
+    if (typeof fullpage_api !== 'undefined') {
+        fullpage_api.setAutoScrolling(false);
     }
-
-    var speedX = 0;
-    const deltaMultiplier = 25;
-    const maxSpeed = 55;
-    const friction = 0.7;
-
-    function draw() {
-        cancelAnimationFrame(rafId);
-
-        offsetX += speedX;
-        const maxScrollLeft =
-            scrollContainer.scrollWidth - scrollContainer.clientWidth;
-        offsetX = Math.min(offsetX, maxScrollLeft);
-        offsetX = Math.max(offsetX, 0);
-
-        scrollContainer.scrollLeft = offsetX;
-        speedX *= friction;
-
-        // update progress bar
-        progressBarPercentage=Math.round((offsetX/maxScrollLeft)*100);
-        document.getElementById("progressBar").style.width = progressBarPercentage + "%";
-        if (progressBarPercentage>4) {
-            document.getElementById("progressBarTip").style.opacity = 0;
-            document.getElementById("progressBarTip").style.visibility = "hidden";
-        } else {
-            document.getElementById("progressBarTip").style.opacity = 0.8;
-            document.getElementById("progressBarTip").style.visibility = "visible";
-        }
-
-        console.log("drawing");
-
-        // about 60 times a second
-        rafId = requestAnimationFrame(draw);
-    }
-
-    scrollContainer.addEventListener("wheel", (ev) => {
-        // ev.preventDefault();
-        var delta = -1 * Math.sign(ev.wheelDelta);
-        speedX += delta * deltaMultiplier;
-        speedX =
-            speedX > 0
-                ? Math.min(speedX, maxSpeed)
-                : Math.max(speedX, -maxSpeed);
-        return false;
-    }, {passive: true});
-
-    document.addEventListener("keydown", (ev) => {
-        // ev.preventDefault();
-        delta = 0;
-        if (ev.code=="ArrowRight" || ev.code=="ArrowDown") {
-            delta = 3;
-        } else if (ev.code=="ArrowLeft" || ev.code=="ArrowUp") {
-            delta = -3;
-        }
-
-        speedX += delta * deltaMultiplier;
-        speedX =
-            speedX > 0
-                ? Math.min(speedX, maxSpeed)
-                : Math.max(speedX, -maxSpeed);
-        return false;
-    }, {passive: true});
-
-    draw();
-}
-
-// // Get the current page scroll position
-// scrollTop =
-//     window.pageYOffset ||
-//     document.documentElement.scrollTop;
-// scrollLeft =
-//     window.pageXOffset ||
-//     document.documentElement.scrollLeft,
-
-//     // if any scroll is attempted,
-//     // set this to the previous value
-//     window.onscroll = function () {
-//         window.scrollTo(scrollLeft, scrollTop);
-//     };
+});

@@ -31,341 +31,354 @@
         <link rel="stylesheet" type="text/css" href="index.css" />
     </head>
     <body>
-        <div id="header">
+        <!-- <div id="header">
             <div id="progressContainer">
                 <p id="progressBarTip">Scroll to navigate</p>
                 <div class="progress-bar" id="progressBar"></div>
             </div>
-        </div>
+        </div> -->
 
         <h1 style="visibility:hidden;position:absolute">Liam Brincat's Photography Atelier</h1>
-        <nav>
-            <ul id="left">
-                <li id="logo"><img src="data/icons/logo.png" alt="Liam Brincat monograph logo"></li>
-                <li onmouseover="hide();show(this, true);"><div><span>(and contact)</span></div>about</li>
-                <li onmouseover="hide();show(this, false);">projects</li>
-            </ul>
-            <ul id="right">
-                <li onclick="fullpage_api.moveSectionUp();">prev</li>
-                <li onclick="fullpage_api.moveSectionDown();">next</li>
-            </ul>
 
-            <!-- about me -->
-            <div id="about">
-                <div>
-                    <img
-                      loading="lazy" src="data/portrait.webp" alt="A portrait of the author and photographer Liam Brincat" />
-                    <div>
-                        <h2>Hello!</h2>
-                        <p>
-                            I'm Liam Brincat, an X born and raised in Malta. I started considering myself a photographer at the young age of 8, free, ignorant, with no agenda, just capturing moments on my FujiFilm FinePix F20, especially portraits. At one point, this stopped. It took me 8 years to really take a photo again and start afresh: my first camera was a Halina Paulette; my first roll was Fomapan 100; my first adventure was in the city I then called home: Toulouse; my first shot was a brick wall. <a href="firstroll.html">Click me</a> if you'd like to see those photos and read more about my journey.
-                        </p>
-                        <p>
-                            I've been hooked ever since that day. I document my life whenever I feel like, in the way I feel like; there isn't too much to it. Sometimes, I try to curate something more profound, reflecting my introspection outwards. Maybe you'll find them interesting.
-                        </p>
-                        <p>email : <span>liabri@tuta.io</span><br>instagram : <a href="https://instagram.com/liambrincat" target="_blank" rel="noreferrer">@liambrincat</a></p>
-                    </div>
+        <section id="landing">
+            <img src="data/hero.webp" alt="a quiet opening image" class="hero-image" />
+                <div class="intro-text">
+                    <p>light, found.</p>
+                    <p>a photographic notebook.</p>
+                    <p>But from what you’ve described — and how you shoot — those boundaries don’t really exist in your work. You document your life, sometimes with more thought, sometimes less, but it’s all part of the same voice.</p>
                 </div>
-                <div class="close" onmouseover="hide();"><img
-                  src="data/icons/back.svg" alt="Back button icon"/></div>
-            </div>
+                <div class="enter-cue">scroll or click to enter ↓</div>
+        </section>
 
-            <!-- project selection -->
-            <div id="projects">
-                <ul id="menu">
-                    <li data-menuanchor="tangledTapestry" class="active">
-                        <a href="#tangledTapestry" onclick="hide();">
-                            <img loading="lazy"
-                                src="data/tangledtapestry/coverlist.webp"
-                                alt="Cover image of Tangled Tapestry photographic series"
-                            />
-                        </a>
-                    </li>
-                    <li data-menuanchor="echoesOfTheRoad">
-                        <a href="#echoesOfTheRoad" onclick="hide();">
-                            <img loading="lazy"
-                                src="data/echoes-of-the-road/coverlist.webp"
-                                alt="Cover image of Echoes of the Road photographic series"
-                            />
-                        </a>
-                    </li>
-                    <li data-menuanchor="thePeopleOfDjerdap">
-                        <a href="#thePeopleOfDjerdap" onclick="hide();">
-                            <img loading="lazy"
-                                src="data/the-people-of-djerdap/coverlist.webp"
-                                alt="Cover image of The People of Djerdap photographic series"
-                            />
-                        </a>
-                    </li>
+        <div id="mainContent" style="display: none;">
+
+            <nav>
+                <ul id="left">
+                    <li id="logo"><img src="data/icons/logo.png" alt="Liam Brincat monograph logo"></li>
+                    <li onmouseover="hide();show(this, true);"><div><span>(and contact)</span></div>about</li>
+                    <li onmouseover="hide();show(this, false);">projects</li>
                 </ul>
-                <div class="close" onmouseover="hide();"><img
-                  src="data/icons/back.svg" alt="Back button icon"/></div>
-            </div>
-        </nav>
-        <main>
-            <div id="fullpage">
-                <div class="section" data-anchor="tangledTapestry">
-                    <div class="canvas">
-                        <h2 style="display:none;visibility:hidden">Threads of the Everyday</h2>
-                        <div class="cover">
-                            <img
-                                src="data/tangledtapestry/cover.webp"
-                                alt="Cover image of Tangled Tapestry photography series"
-                            />
-                        </div>
-                        <div class="images">
-                            <div class="text">
-                                <p>
-                                    Streets unfold as a carefully orchestrated choreography, the movement within as an unconscious rhythm. The disorder may obfuscate the true nature of the city, but the patterns by which the people navigate are certainly present. Such clarity becomes evident as you unweave the tapestry, expressed through every step, pause, gaze, smile, and somnambulant moment.
-                                </p>
-                                <p class="def">
-                                    from latin <i>somnus</i> (“sleep”) + <i>ambulō</i> (“I walk”) + <i>-ant</i>.
-                                </p>
-                            </div>
-                            <figure class="image" data-anchor="the-tapestry">
-                                <img
-                                    src="data/tangledtapestry/1.webp"
-                                    alt="An alleyway with an unfolding colourful composition"
-                                    data-modal
-                                />
-                                <figcaption>the tapestry</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/tangledtapestry/2.webp"
-                                    alt="A busy pedestrianised street at dusk"
-                                    data-modal
-                                />
-                                <figcaption>6:23 pm</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/tangledtapestry/3.webp"
-                                    alt="A woman shopping at the busy local market"
-                                    data-modal
-                                />
-                                <figcaption>light's heavy</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/tangledtapestry/4.webp"
-                                    alt="A man crossing the street holding a mattress"
-                                    data-modal
-                                />
-                                <figcaption>a resting place</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/tangledtapestry/7.webp"
-                                    alt="Two woman walking away from a church"
-                                    data-modal
-                                />
-                                <figcaption>goodness me</figcaption>
-                            </figure>
-                            <p class="text">
-                                This begs the question: Does order rise from chaos, or merely lie hidden beneath its shroud?
+                <ul id="right">
+                    <li onclick="fullpage_api.moveSectionUp();">prev</li>
+                    <li onclick="fullpage_api.moveSectionDown();">next</li>
+                </ul>
+
+                <!-- about me -->
+                <div id="about">
+                    <div>
+                        <img
+                        loading="lazy" src="data/portrait.webp" alt="A portrait of the author and photographer Liam Brincat" />
+                        <div>
+                            <h2>Hello!</h2>
+                            <p>
+                                I'm Liam Brincat, an X born and raised in Malta. I started considering myself a photographer at the young age of 8, free, ignorant, with no agenda, just capturing moments on my FujiFilm FinePix F20, especially portraits. At one point, this stopped. It took me 8 years to really take a photo again and start afresh: my first camera was a Halina Paulette; my first roll was Fomapan 100; my first adventure was in the city I then called home: Toulouse; my first shot was a brick wall. <a href="firstroll.html">Click me</a> if you'd like to see those photos and read more about my journey.
                             </p>
-                            <figure class="image">
-                                <img
-                                    src="data/tangledtapestry/8.webp"
-                                    alt="Two men conversing under an archway with a building in the background"
-                                    data-modal
-                                />
-                                <figcaption>for the souls</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/tangledtapestry/5.webp"
-                                    alt="Two kids running in the street playing tag"
-                                    data-modal
-                                />
-                                <figcaption>and they kept runnin'</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/tangledtapestry/6.webp"
-                                    alt="A woman presumbly walking home with a grocery bag"
-                                    data-modal
-                                />
-                                <figcaption>tossle rossle</figcaption>
-                            </figure>
+                            <p>
+                                I've been hooked ever since that day. I document my life whenever I feel like, in the way I feel like; there isn't too much to it. Sometimes, I try to curate something more profound, reflecting my introspection outwards. Maybe you'll find them interesting.
+                            </p>
+                            <p>email : <span>liabri@tuta.io</span><br>instagram : <a href="https://instagram.com/liambrincat" target="_blank" rel="noreferrer">@liambrincat</a></p>
                         </div>
                     </div>
+                    <div class="close" onmouseover="hide();"><img
+                    src="data/icons/back.svg" alt="Back button icon"/></div>
                 </div>
 
-                <div class="section" data-anchor="echoesOfTheRoad">
-                    <div class="canvas">
-                        <h2 style="display:none;visibility:hidden">Echoes of the Road</h2>
-                        <div class="cover">
-                            <img
-                                src="data/echoes-of-the-road/cover.webp"
-                                alt="Cover image of 'echoes-of-the-road' photography series"
-                            />
-                        </div>
-                        <div class="images">
-                            <figure class="image">
-                                <img
-                                    src="data/echoes-of-the-road/7.webp"
-                                    alt="An alleyway with an unfolding colourful composition"
-                                    data-modal
+                <!-- project selection -->
+                <div id="projects">
+                    <ul id="menu">
+                        <li data-menuanchor="tangledTapestry" class="active">
+                            <a href="#tangledTapestry" onclick="hide();">
+                                <img loading="lazy"
+                                    src="data/tangledtapestry/coverlist.webp"
+                                    alt="Cover image of Tangled Tapestry photographic series"
                                 />
-                                <figcaption>Suspended Reality</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/echoes-of-the-road/17.webp"
-                                    alt="A person walking in the rain under an orange umbrella"
-                                    data-modal
+                            </a>
+                        </li>
+                        <li data-menuanchor="echoesOfTheRoad">
+                            <a href="#echoesOfTheRoad" onclick="hide();">
+                                <img loading="lazy"
+                                    src="data/echoes-of-the-road/coverlist.webp"
+                                    alt="Cover image of Echoes of the Road photographic series"
                                 />
-                                <figcaption>Drenched in Solitude</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/echoes-of-the-road/6.webp"
-                                    alt="A woman shopping at the busy local market"
-                                    data-modal
+                            </a>
+                        </li>
+                        <li data-menuanchor="thePeopleOfDjerdap">
+                            <a href="#thePeopleOfDjerdap" onclick="hide();">
+                                <img loading="lazy"
+                                    src="data/the-people-of-djerdap/coverlist.webp"
+                                    alt="Cover image of The People of Djerdap photographic series"
                                 />
-                                <figcaption>Shadows of Transit</figcaption>
-                            </figure>
-                            <figure class="image">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="close" onmouseover="hide();"><img
+                    src="data/icons/back.svg" alt="Back button icon"/></div>
+                </div>
+            </nav>
+            <main>
+                <div id="fullpage">
+                    <div class="section" data-anchor="tangledTapestry">
+                        <div class="canvas">
+                            <h2 style="display:none;visibility:hidden">Threads of the Everyday</h2>
+                            <div class="cover">
                                 <img
-                                    src="data/echoes-of-the-road/5.webp"
-                                    alt="Two woman walking away from a church"
-                                    data-modal
+                                    src="data/tangledtapestry/cover.webp"
+                                    alt="Cover image of Tangled Tapestry photography series"
                                 />
-                                <figcaption>Beyond the Barrier</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/echoes-of-the-road/3.webp"
-                                    alt="Two men conversing under an archway with a building in the background"
-                                    data-modal
-                                />
-                                <figcaption>A Pause in the Current</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/echoes-of-the-road/1.webp"
-                                    alt="Two kids running in the street playing tag"
-                                    data-modal
-                                />
-                                <figcaption>And Then They Kept Running</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/echoes-of-the-road/8.webp"
-                                    alt="A woman presumbly walking home with a grocery bag"
-                                    data-modal
-                                />
-                                <figcaption>Woven Through the City</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/echoes-of-the-road/16.webp"
-                                    alt="A woman presumbly walking home with a grocery bag"
-                                    data-modal
-                                />
-                                <figcaption>Woven Through the City</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/echoes-of-the-road/13.webp"
-                                    alt="A woman presumbly walking home with a grocery bag"
-                                    data-modal
-                                />
-                                <figcaption>Woven Through the City</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/echoes-of-the-road/15.webp"
-                                    alt="A woman presumbly walking home with a grocery bag"
-                                    data-modal
-                                />
-                                <figcaption>Woven Through the City</figcaption>
+                            </div>
+                            <div class="images">
+                                <div class="text">
+                                    <p>
+                                        Streets unfold as a carefully orchestrated choreography, the movement within as an unconscious rhythm. The disorder may obfuscate the true nature of the city, but the patterns by which the people navigate are certainly present. Such clarity becomes evident as you unweave the tapestry, expressed through every step, pause, gaze, smile, and somnambulant moment.
+                                    </p>
+                                    <p class="def">
+                                        from latin <i>somnus</i> (“sleep”) + <i>ambulō</i> (“I walk”) + <i>-ant</i>.
+                                    </p>
+                                </div>
+                                <figure class="image" data-anchor="the-tapestry">
+                                    <img
+                                        src="data/tangledtapestry/1.webp"
+                                        alt="An alleyway with an unfolding colourful composition"
+                                        data-modal
+                                    />
+                                    <figcaption>the tapestry</figcaption>
                                 </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/tangledtapestry/2.webp"
+                                        alt="A busy pedestrianised street at dusk"
+                                        data-modal
+                                    />
+                                    <figcaption>6:23 pm</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/tangledtapestry/3.webp"
+                                        alt="A woman shopping at the busy local market"
+                                        data-modal
+                                    />
+                                    <figcaption>light's heavy</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/tangledtapestry/4.webp"
+                                        alt="A man crossing the street holding a mattress"
+                                        data-modal
+                                    />
+                                    <figcaption>a resting place</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/tangledtapestry/7.webp"
+                                        alt="Two woman walking away from a church"
+                                        data-modal
+                                    />
+                                    <figcaption>goodness me</figcaption>
+                                </figure>
+                                <p class="text">
+                                    This begs the question: Does order rise from chaos, or merely lie hidden beneath its shroud?
+                                </p>
+                                <figure class="image">
+                                    <img
+                                        src="data/tangledtapestry/8.webp"
+                                        alt="Two men conversing under an archway with a building in the background"
+                                        data-modal
+                                    />
+                                    <figcaption>for the souls</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/tangledtapestry/5.webp"
+                                        alt="Two kids running in the street playing tag"
+                                        data-modal
+                                    />
+                                    <figcaption>and they kept runnin'</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/tangledtapestry/6.webp"
+                                        alt="A woman presumbly walking home with a grocery bag"
+                                        data-modal
+                                    />
+                                    <figcaption>tossle rossle</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" data-anchor="echoesOfTheRoad">
+                        <div class="canvas">
+                            <h2 style="display:none;visibility:hidden">Echoes of the Road</h2>
+                            <div class="cover">
+                                <img
+                                    src="data/echoes-of-the-road/cover.webp"
+                                    alt="Cover image of 'echoes-of-the-road' photography series"
+                                />
+                            </div>
+                            <div class="images">
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/7.webp"
+                                        alt="An alleyway with an unfolding colourful composition"
+                                        data-modal
+                                    />
+                                    <figcaption>Suspended Reality</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/17.webp"
+                                        alt="A person walking in the rain under an orange umbrella"
+                                        data-modal
+                                    />
+                                    <figcaption>Drenched in Solitude</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/6.webp"
+                                        alt="A woman shopping at the busy local market"
+                                        data-modal
+                                    />
+                                    <figcaption>Shadows of Transit</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/5.webp"
+                                        alt="Two woman walking away from a church"
+                                        data-modal
+                                    />
+                                    <figcaption>Beyond the Barrier</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/3.webp"
+                                        alt="Two men conversing under an archway with a building in the background"
+                                        data-modal
+                                    />
+                                    <figcaption>A Pause in the Current</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/1.webp"
+                                        alt="Two kids running in the street playing tag"
+                                        data-modal
+                                    />
+                                    <figcaption>And Then They Kept Running</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/8.webp"
+                                        alt="A woman presumbly walking home with a grocery bag"
+                                        data-modal
+                                    />
+                                    <figcaption>Woven Through the City</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/16.webp"
+                                        alt="A woman presumbly walking home with a grocery bag"
+                                        data-modal
+                                    />
+                                    <figcaption>Woven Through the City</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/13.webp"
+                                        alt="A woman presumbly walking home with a grocery bag"
+                                        data-modal
+                                    />
+                                    <figcaption>Woven Through the City</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/echoes-of-the-road/15.webp"
+                                        alt="A woman presumbly walking home with a grocery bag"
+                                        data-modal
+                                    />
+                                    <figcaption>Woven Through the City</figcaption>
+                                    </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" data-anchor="thePeopleOfDjerdap">
+                        <div class="canvas">
+                            <div class="cover">
+                                <img
+                                    src="data/the-people-of-djerdap/cover.webp"
+                                    alt="Cover image of Tangled Tapestry photography series"
+                                />
+                            </div>
+                            <div class="images">
+                                <figure class="image">
+                                    <img
+                                        src="data/the-people-of-djerdap/1.webp"
+                                        alt="An alleyway with an unfolding colourful composition"
+                                        data-modal
+                                    />
+                                    <figcaption>Marek above the River of Djerdap</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/the-people-of-djerdap/2.webp"
+                                        alt="A busy pedestrianised street at dusk"
+                                        data-modal
+                                    />
+                                    <figcaption>Franz</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/the-people-of-djerdap/3.webp"
+                                        alt="A woman shopping at the busy local market"
+                                        data-modal
+                                    />
+                                    <figcaption>Manoel</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/the-people-of-djerdap/4.webp"
+                                        alt="A man crossing the street holding a mattress"
+                                        data-modal
+                                    />
+                                    <figcaption>Resting Place</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/the-people-of-djerdap/5.webp"
+                                        alt="Two woman walking away from a church"
+                                        data-modal
+                                    />
+                                    <figcaption>Bennie</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/the-people-of-djerdap/6.webp"
+                                        alt="Two men conversing under an archway with a building in the background"
+                                        data-modal
+                                    />
+                                    <figcaption>Connie</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/the-people-of-djerdap/7.webp"
+                                        alt="Two kids running in the street playing tag"
+                                        data-modal
+                                    />
+                                    <figcaption>Aleksandra</figcaption>
+                                </figure>
+                                <figure class="image">
+                                    <img
+                                        src="data/the-people-of-djerdap/8.webp"
+                                        alt="A woman presumbly walking home with a grocery bag"
+                                        data-modal
+                                    />
+                                    <figcaption>Marek</figcaption>
+                                </figure>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="section" data-anchor="thePeopleOfDjerdap">
-                    <div class="canvas">
-                        <div class="cover">
-                            <img
-                                src="data/the-people-of-djerdap/cover.webp"
-                                alt="Cover image of Tangled Tapestry photography series"
-                            />
-                        </div>
-                        <div class="images">
-                            <figure class="image">
-                                <img
-                                    src="data/the-people-of-djerdap/1.webp"
-                                    alt="An alleyway with an unfolding colourful composition"
-                                    data-modal
-                                />
-                                <figcaption>Marek above the River of Djerdap</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/the-people-of-djerdap/2.webp"
-                                    alt="A busy pedestrianised street at dusk"
-                                    data-modal
-                                />
-                                <figcaption>Franz</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/the-people-of-djerdap/3.webp"
-                                    alt="A woman shopping at the busy local market"
-                                    data-modal
-                                />
-                                <figcaption>Manoel</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/the-people-of-djerdap/4.webp"
-                                    alt="A man crossing the street holding a mattress"
-                                    data-modal
-                                />
-                                <figcaption>Resting Place</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/the-people-of-djerdap/5.webp"
-                                    alt="Two woman walking away from a church"
-                                    data-modal
-                                />
-                                <figcaption>Bennie</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/the-people-of-djerdap/6.webp"
-                                    alt="Two men conversing under an archway with a building in the background"
-                                    data-modal
-                                />
-                                <figcaption>Connie</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/the-people-of-djerdap/7.webp"
-                                    alt="Two kids running in the street playing tag"
-                                    data-modal
-                                />
-                                <figcaption>Aleksandra</figcaption>
-                            </figure>
-                            <figure class="image">
-                                <img
-                                    src="data/the-people-of-djerdap/8.webp"
-                                    alt="A woman presumbly walking home with a grocery bag"
-                                    data-modal
-                                />
-                                <figcaption>Marek</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
+            </main>
+        </div>
         <script type="text/javascript" src="fullpage/fullpage.min.js"></script>
         <script type="text/javascript" src="index.js"></script>
     </body>
