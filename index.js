@@ -99,7 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     sectionInner.targetScrollX = 0;
 
                     // hide the projects page
+                    projectsElement.style.transition = 'none'; // remove projects animation for performance
                     projectsElement.classList.remove("active");
+                    setTimeout(() => {
+                        projectsElement.style.transition = ''; // re-add
+                    }, 100);
 
                     // match nav to section
                     const section = document.querySelector('.fp-section.active'); // currently active section
@@ -109,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     nav.style.color = "";
                     nav.style.borderColor = "";
                 }
-            }, 200);
+            }, 350);
 
             return false;
         },
