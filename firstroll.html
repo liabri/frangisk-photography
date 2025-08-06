@@ -31,6 +31,8 @@
         <script type="text/javascript" src="index.js"></script>
     </head>
     <body>
+        <div class="persistent-border"></div>
+
         <div class="header">
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar"></div>
@@ -40,7 +42,6 @@
 
         <nav>
             <ul id="left">
-                <li id="logo"><img src="data/icons/logo.png"></li>
                 <li onmouseover="hide();show(this, true);"><div><span>(and contact)</span></div>about</li>
                 <li onmouseover="hide();show(this, false);">projects</li>
             </ul>
@@ -354,3 +355,91 @@
         </main>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav>
+    <ul class="section-nav">
+        <li onclick="fullpage_api.moveSectionUp();" onmouseover="hide();">prev</li>
+    </ul>
+    <ul id="centre">
+        <li onmouseover="hide();show(this, true);"><div><span>(and contact)</span></div>about</li>
+        <li onmouseover="hide();show(this, false);">explore</li>
+    </ul>
+    <ul class="section-nav">
+        <li onclick="fullpage_api.moveSectionDown();" onmouseover="hide();">next</li>
+    </ul>
+
+    <!-- about me -->
+    <div id="about">
+        <div>
+            <img
+            loading="lazy" src="data/portrait.webp" alt="A portrait of the author and photographer Liam Brincat" />
+            <div>
+                <h2>Hello!</h2>
+                <p>
+                    I'm Liam Brincat (Malta, 2001) I started considering myself a photographer at the young age of 8, free, ignorant, with no agenda, just capturing moments on my FujiFilm FinePix F20, especially portraits. At one point, this stopped. It took me 8 years to really take a photo again and start afresh: my first camera was a Halina Paulette; my first roll was Fomapan 100; my first adventure was in the city I then called home: Toulouse; my first shot was a brick wall. <a href="firstroll.html">Click me</a> if you'd like to see those photos and read more about my journey.
+                </p>
+                <p>
+                    I've been hooked ever since that day. I document my life whenever I feel like, in the way I feel like; there isn't too much to it. Sometimes, I try to curate something more profound, reflecting my introspection outwards. Maybe you'll find them interesting.
+                </p>
+                <p>email : <span>liabri@tuta.io</span><br>instagram : <a href="https://instagram.com/liambrincat" target="_blank" rel="noreferrer">@liambrincat</a><br>matrix : <span>@liabri:matrix.org</span></p>
+            </div>
+        </div>
+        <div class="close" onmouseover="hide();"><img
+        src="data/icons/back.svg" alt="Back button icon"/></div>
+    </div>
+
+    <!-- project selection -->
+    <div id="projects">
+        <ul id="menu">
+            <li data-menuanchor="tangledTapestry" class="active">
+                <a href="#tangledTapestry" onclick="hide();">
+                    <img loading="lazy"
+                        src="data/tangledtapestry/coverlist.webp"
+                        alt="Cover image of Tangled Tapestry photographic series"
+                    />
+                </a>
+            </li>
+            <li data-menuanchor="echoesOfTheRoad">
+                <a href="#echoesOfTheRoad" onclick="hide();">
+                    <img loading="lazy"
+                        src="data/echoes-of-the-road/coverlist.webp"
+                        alt="Cover image of Echoes of the Road photographic series"
+                    />
+                </a>
+            </li>
+            <li data-menuanchor="thePeopleOfDjerdap">
+                <a href="#thePeopleOfDjerdap" onclick="hide();">
+                    <img loading="lazy"
+                        src="data/the-people-of-djerdap/coverlist.webp"
+                        alt="Cover image of The People of Djerdap photographic series"
+                    />
+                </a>
+            </li>
+        </ul>
+        <div class="close" onmouseover="hide();"><img
+        src="data/icons/back.svg" alt="Back button icon"/></div>
+    </div>
+</nav>

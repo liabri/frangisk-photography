@@ -31,36 +31,37 @@
         <link rel="stylesheet" type="text/css" href="index.css" />
     </head>
     <body>
-        <!-- <div id="header">
-            <div id="progressContainer">
-                <p id="progressBarTip">Scroll to navigate</p>
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-        </div> -->
-
-        <h1 style="visibility:hidden;position:absolute">Liam Brincat's Photography Atelier</h1>
+        <div class="persistent-border"></div>
+        <div id="projector-overlay"></div>
 
         <section id="landing">
-            <img src="data/hero.webp" alt="a quiet opening image" class="hero-image" />
-                <div class="intro-text">
-                    <p>light, found.</p>
-                    <p>a photographic notebook.</p>
-                    <p>But from what you’ve described — and how you shoot — those boundaries don’t really exist in your work. You document your life, sometimes with more thought, sometimes less, but it’s all part of the same voice.</p>
-                </div>
-                <div class="enter-cue">scroll or click to enter ↓</div>
+            <div class="text-pane">
+                <h1>liam brincat</h1>
+                <p>a photographic notebook</p><!--, sometimes with more thought, sometimes less, but it’s all part of the same voice.</p> -->
+            </div>
+            <div class="cubist-figure">
+                <div class="shard shard-1"><img src="data/the-people-of-djerdap/1.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-2"><img src="data/echoes-of-the-road/17.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-3"><img src="data/tangledtapestry/7.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-4"><img src="data/echoes-of-the-road/7.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-5"><img src="data/tangledtapestry/1.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-6"><img src="data/the-people-of-djerdap/4.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-7"><img src="data/echoes-of-the-road/13.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-8"><img src="data/the-people-of-djerdap/8.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-9"><img src="data/tangledtapestry/3.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-10"><img src="data/echoes-of-the-road/15.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-11"><img src="data/the-people-of-djerdap/6.webp" alt="Collage Fragment"></div>
+                <div class="shard shard-12"><img src="data/tangledtapestry/4.webp" alt="Collage Fragment"></div>
+            </div>
         </section>
 
-        <div id="mainContent" style="display: none;">
-
+        <div id="content" style="display: none;">
             <nav>
-                <ul id="left">
-                    <li id="logo"><img src="data/icons/logo.png" alt="Liam Brincat monograph logo"></li>
+                <ul>
+                    <li class="section-nav" onclick="fullpage_api.moveSectionDown();" onmouseover="hide();">next</li>
                     <li onmouseover="hide();show(this, true);"><div><span>(and contact)</span></div>about</li>
-                    <li onmouseover="hide();show(this, false);">projects</li>
-                </ul>
-                <ul id="right">
-                    <li onclick="fullpage_api.moveSectionUp();">prev</li>
-                    <li onclick="fullpage_api.moveSectionDown();">next</li>
+                    <li onmouseover="hide();show(this, false);">explore</li>
+                    <li class="section-nav" onclick="fullpage_api.moveSectionUp();" onmouseover="hide();">prev</li>
                 </ul>
 
                 <!-- about me -->
@@ -71,12 +72,12 @@
                         <div>
                             <h2>Hello!</h2>
                             <p>
-                                I'm Liam Brincat, an X born and raised in Malta. I started considering myself a photographer at the young age of 8, free, ignorant, with no agenda, just capturing moments on my FujiFilm FinePix F20, especially portraits. At one point, this stopped. It took me 8 years to really take a photo again and start afresh: my first camera was a Halina Paulette; my first roll was Fomapan 100; my first adventure was in the city I then called home: Toulouse; my first shot was a brick wall. <a href="firstroll.html">Click me</a> if you'd like to see those photos and read more about my journey.
+                                I'm Liam Brincat (Malta, 2001) I started considering myself a photographer at the young age of 8, free, ignorant, with no agenda, just capturing moments on my FujiFilm FinePix F20, especially portraits. At one point, this stopped. It took me 8 years to really take a photo again and start afresh: my first camera was a Halina Paulette; my first roll was Fomapan 100; my first adventure was in the city I then called home: Toulouse; my first shot was a brick wall. <a href="firstroll.html">Click me</a> if you'd like to see those photos and read more about my journey.
                             </p>
                             <p>
                                 I've been hooked ever since that day. I document my life whenever I feel like, in the way I feel like; there isn't too much to it. Sometimes, I try to curate something more profound, reflecting my introspection outwards. Maybe you'll find them interesting.
                             </p>
-                            <p>email : <span>liabri@tuta.io</span><br>instagram : <a href="https://instagram.com/liambrincat" target="_blank" rel="noreferrer">@liambrincat</a></p>
+                            <p>email : <span>liabri@tuta.io</span><br>instagram : <a href="https://instagram.com/liambrincat" target="_blank" rel="noreferrer">@liambrincat</a><br>matrix : <span>@liabri:matrix.org</span></p>
                         </div>
                     </div>
                     <div class="close" onmouseover="hide();"><img
@@ -87,7 +88,7 @@
                 <div id="projects">
                     <ul id="menu">
                         <li data-menuanchor="tangledTapestry" class="active">
-                            <a href="#tangledTapestry" onclick="hide();">
+                            <a href="#tangledTapestry">
                                 <img loading="lazy"
                                     src="data/tangledtapestry/coverlist.webp"
                                     alt="Cover image of Tangled Tapestry photographic series"
@@ -95,7 +96,7 @@
                             </a>
                         </li>
                         <li data-menuanchor="echoesOfTheRoad">
-                            <a href="#echoesOfTheRoad" onclick="hide();">
+                            <a href="#echoesOfTheRoad">
                                 <img loading="lazy"
                                     src="data/echoes-of-the-road/coverlist.webp"
                                     alt="Cover image of Echoes of the Road photographic series"
@@ -103,7 +104,7 @@
                             </a>
                         </li>
                         <li data-menuanchor="thePeopleOfDjerdap">
-                            <a href="#thePeopleOfDjerdap" onclick="hide();">
+                            <a href="#thePeopleOfDjerdap">
                                 <img loading="lazy"
                                     src="data/the-people-of-djerdap/coverlist.webp"
                                     alt="Cover image of The People of Djerdap photographic series"
@@ -118,13 +119,18 @@
             <main>
                 <div id="fullpage">
                     <div class="section" data-anchor="tangledTapestry">
-                        <div class="canvas">
-                            <h2 style="display:none;visibility:hidden">Threads of the Everyday</h2>
-                            <div class="cover">
-                                <img
-                                    src="data/tangledtapestry/cover.webp"
-                                    alt="Cover image of Tangled Tapestry photography series"
-                                />
+                        <div id="tangledTapestryCanvas" class="section-inner">
+                            <div class="title-card">
+                                <div class="title-card-text">
+                                    <h2>Tangled Tapestry</h2>
+                                    <p>
+                                        Streets unfold as a carefully orchestrated choreography, the movement within as an unconscious rhythm.
+                                    </p>
+                                    <span class="scroll-prompt">Scroll right to explore &rarr;</span>
+                                </div>
+                                <div class="title-card-image">
+                                    <img src="data/tangledtapestry/1.webp" alt="Cover image of Tangled Tapestry photography series" />
+                                </div>
                             </div>
                             <div class="images">
                                 <div class="text">
@@ -207,7 +213,7 @@
                     </div>
 
                     <div class="section" data-anchor="echoesOfTheRoad">
-                        <div class="canvas">
+                        <div id="echoesOfTheRoadCanvas" class="section-inner">
                             <h2 style="display:none;visibility:hidden">Echoes of the Road</h2>
                             <div class="cover">
                                 <img
@@ -301,13 +307,7 @@
                     </div>
 
                     <div class="section" data-anchor="thePeopleOfDjerdap">
-                        <div class="canvas">
-                            <div class="cover">
-                                <img
-                                    src="data/the-people-of-djerdap/cover.webp"
-                                    alt="Cover image of Tangled Tapestry photography series"
-                                />
-                            </div>
+                        <div id="thePeopleOfDjerdapCanvas" class="section-inner">
                             <div class="images">
                                 <figure class="image">
                                     <img
