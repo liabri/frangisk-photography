@@ -321,16 +321,12 @@ nav ul li {
 }
 
 nav ul li:hover {
-    background: transparent;
-    color: #34856c; /* colour should also be chosen from CURRENT content */
+    /* background: transparent; */
+    /* color: #34856c; colour should also be chosen from CURRENT content */
+    background-color: #EAAA00;
     transform: translate(5px, 5px);
     text-shadow:
-        1.5px 1.5px 0 #0e0e0e,
-        -1.5px -1.5px 0 #0e0e0e,
-        -1.5px -1.5px 0 #0e0e0e,
-        -1.5px 1.5px 0 #0e0e0e,
-        1.5px -1.5px 0 #0e0e0e,
-        -5px -5px #4fd1a8;
+        -5px -5px #FF7A00;
 }
 
 /* next/prev buttons */
@@ -509,8 +505,8 @@ nav ul li:hover > div span, #left li > div span {
 #about > div:not(.close) > img {
     width: auto;
     height: auto;
-    max-width: 80vw;
-    max-height: 80vh;
+    max-width: 70vw;
+    max-height: 70vh;
 }
 
 #about > div:not(.close) {
@@ -521,7 +517,7 @@ nav ul li:hover > div span, #left li > div span {
     align-items: center;
 }
 
-#about p {
+#about p, #about span {
     text-align: justify;
     text-justify: inter-word;
     font-size: 3vh;
@@ -530,23 +526,43 @@ nav ul li:hover > div span, #left li > div span {
 #about div > h2 {
     font-size: 10vh;
     margin: 0;
+    background-color: #EAAA00;
+    width: max-content;
+    padding: 5px;
 }
 
-#about div > p > span {
-    color: #34856c;
+#about div > p > span, #contact span:first-of-type {
+    /* color: #34856c; */
+    padding: 4px;
+    background-color: #EAAA00;
 }
 
-#about div > p > a {
+#about div > p > a, #contact span:nth-of-type(2) a {
     cursor: pointer;
-    color: #34856c;
+    /* color: #34856c; */
+    color: #000;
+    padding: 2px;
+    background-color: #FF7A00;
 }
 
-#about div > p > a:hover {
-    text-shadow: 0 0 0.01px black;
+
+#about div > p > a:hover, #contact span:nth-of-type(2) a:hover {
+    color: #eeeef2;
+    /* text-shadow: 0 0 0.01px black; */
+
 }
 
 #about.active {
     transform: none;
+}
+
+#contact {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100%;
+    line-height: 1.15;
+    gap: 1vw;
 }
 
 /* =================================================================== */
