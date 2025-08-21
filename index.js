@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
 
     // if (!sessionStorage.getItem('hasVisited')) {
-        // if (typeof fullpage_api !== 'undefined') {
-        //     fullpage_api.setAutoScrolling(false);
-        //     fullpage_api.setKeyboardScrolling(false);
-        // }
+
+        // prevent scrolling in section until entered site
+        if (typeof fullpage_api !== 'undefined') {
+            fullpage_api.setAutoScrolling(false);
+            fullpage_api.setKeyboardScrolling(false);
+        }
         function enterSite() {
             content.style.display = "block";
             document.body.classList.add("site-entered");
@@ -226,17 +228,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // show/hide nav section
-function show(self, about) {
+function hide_unless_show(self) {
+    const active = document.querySelector(".active");
+    const target = self.id === "explore-button" ? "projects" : "about";
+
+    // if current matches the hover, close; if current does not match the hover, close current and open new one; if nothing is open, show
+    if (active && active.id === target) {
+        hide();
+    } else {
+        if (active) hide();
+        show(self);
+    }
+}
+
+function show(self) {
     if (isTransitionLocked) return;
     const nav = document.querySelector('nav ul');
 
-    if (about) {
+    // if (about) {
+    if (self.id=="about-button") {
         const close = document.querySelector('#about .close');
         nav.style.backgroundColor = "rgba(255, 254, 237, 0.9)";
         close.style.backgroundColor = "rgba(255, 254, 237, 0.9)";
         document.getElementById("about").classList.add("active");
     }
-    else {
+    else if (self.id=="explore-button") {
         nav.style.backgroundColor = "#090909";
         nav.style.borderColor= "rgba(255, 254, 237, 0.9)";
         nav.style.color = "rgba(255, 254, 237, 0.9)";

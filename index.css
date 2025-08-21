@@ -73,9 +73,6 @@ body.site-entered #content {
     will-change: transform;
 
     background-color: #050505;
-    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 600 600'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.15' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%50' height='100%50' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"),
-    radial-gradient(circle at 100% 0%, rgba(180, 160, 130, 0.1) 0%, transparent 20%); */
-    /* background-size: cover, cover; */
 }
 
 body.is-changing-section #projector-overlay {
@@ -396,11 +393,8 @@ nav ul li:hover > div span, #left li > div span {
     position: absolute;
     display: flex;
     flex-direction: row;
-    /* width: 100vw;
-    height: 100%; */
     transform: translate(-100vw, 0);
     transition: transform 0.2s;
-
 
     background: #090909;
 
@@ -418,19 +412,15 @@ nav ul li:hover > div span, #left li > div span {
     display: initial;
     overflow: auto;
 
-    /* width: 91vw;
-    padding-left: 9vw;
-    height: 100%;
-    padding-top: 1vw; */
     width: 100%;
     height: 100%;
 
     margin-left: auto;
     margin-right: auto;
 
-    /* background: #090909; */
     writing-mode: initial;
     transform: none;
+    border: none;
 }
 
 #projects ul li {
@@ -505,12 +495,11 @@ nav ul li:hover > div span, #left li > div span {
 
     font-family: FFGoodPro-News, sans-serif;
 
-    background: #fffeed;
     pointer-events: auto;
     transform: translate(-100vw, 0);
     transition: transform 0.3s;
 
-    background-color: rgba(255, 254, 237, 0.9);
+    background-color: rgba(255, 254, 237, 1);
     background-image:
       repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.015) 0px, rgba(0, 0, 0, 0.015) 1px, transparent 1px, transparent 4px),
       repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.015) 0px, rgba(0, 0, 0, 0.015) 1px, transparent 1px, transparent 4px);
@@ -578,6 +567,7 @@ main {
     flex-direction: row;
 
     position: relative;
+    padding-left: 15vw;
     overflow: auto;
 
     background-image:
@@ -592,7 +582,6 @@ main {
     width: auto;
     height: 80vh;
     background-color: transparent;
-    margin: 0 15vw 0 15vw;
 
     justify-self: center;
 
@@ -654,8 +643,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 93vw;
-    position: absolute;
+    flex-shrink: 0;
 }
 
 .text {
@@ -726,6 +714,27 @@ figcaption {
     font-style: italic;
     padding-top: 5px;
     font-size: 1em;
+}
+
+.boundary {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* background: rgba(0, 0, 0, 0.2); */
+    width: 10vw;
+    margin-right: 15vw;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.boundary span {
+    writing-mode: vertical-lr;
+    font-family: FFGoodPro-News;
+    font-size: 2em;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+    transform: scale(-1, -1);
 }
 
 /* =================================================================== */

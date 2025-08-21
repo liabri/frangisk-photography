@@ -58,10 +58,10 @@
         <div id="content" style="display: none;">
             <nav>
                 <ul>
-                    <li class="section-nav" onclick="fullpage_api.moveSectionDown();" onmouseover="hide();">next</li>
-                    <li onmouseover="hide();show(this, true);"><div><span>(and contact)</span></div>about</li>
-                    <li onmouseover="hide();show(this, false);">explore</li>
                     <li class="section-nav" onclick="fullpage_api.moveSectionUp();" onmouseover="hide();">prev</li>
+                    <li id="about-button" onmouseenter="hide_unless_show(this);"><div><span>(and contact)</span></div>about</li>
+                    <li id="explore-button" onmouseenter="hide_unless_show(this);">explore</li>
+                    <li class="section-nav" onclick="fullpage_api.moveSectionDown();" onmouseover="hide();">next</li>
                 </ul>
 
                 <!-- about me -->
@@ -72,6 +72,7 @@
                         <div>
                             <h2>Hello!</h2>
                             <p>
+                                I haven't taken too many photos in my life, mostly when I was 8-12 taking portraits of my classmates, and since I got my grandma's Halina Paulette in 2022.
                                 I'm Liam Brincat (Malta, 2001) I started considering myself a photographer at the young age of 8, free, ignorant, with no agenda, just capturing moments on my FujiFilm FinePix F20, especially portraits. At one point, this stopped. It took me 8 years to really take a photo again and start afresh: my first camera was a Halina Paulette; my first roll was Fomapan 100; my first adventure was in the city I then called home: Toulouse; my first shot was a brick wall. <a href="firstroll.html">Click me</a> if you'd like to see those photos and read more about my journey.
                             </p>
                             <p>
@@ -113,7 +114,7 @@
                         </li>
                     </ul>
                     <div class="close" onmouseover="hide();"><img
-                    src="data/icons/back.svg" alt="Back button icon"/></div>
+                    src="data/icons/back-white.svg" alt="Back button icon"/></div>
                 </div>
             </nav>
             <main>
@@ -209,6 +210,7 @@
                                     <figcaption>tossle rossle</figcaption>
                                 </figure>
                             </div>
+                            <div class="boundary"><span>NEXT PROJECT ↓</span></div>
                         </div>
                     </div>
 
@@ -303,6 +305,7 @@
                                     <figcaption>Woven Through the City</figcaption>
                                     </figure>
                             </div>
+                            <div class="boundary"><span>NEXT PROJECT ↓</span></div>
                         </div>
                     </div>
 
@@ -374,6 +377,7 @@
                                     <figcaption>Marek</figcaption>
                                 </figure>
                             </div>
+                            <div class="boundary"><span></span></div>
                         </div>
                     </div>
                 </div>
